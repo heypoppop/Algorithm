@@ -1,10 +1,12 @@
 import java.util.*;
 class Solution {
     public int[] solution(long n) {
-        String[] strArr = (n+"").split("");
-        int[] answer = new int[strArr.length];
-        for (int i = 0; i < strArr.length; i++) {
-            answer[i] = Integer.valueOf(strArr[strArr.length-i-1]);
+        String input = ""+n;
+        int[] answer = new int[input.length()];
+        int i = 0;
+        while(n>0) {
+            answer[i++] = (int) (n%10);
+            n /= 10;
         }
         return answer;
     }
